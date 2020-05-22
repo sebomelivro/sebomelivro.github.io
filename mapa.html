@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>Área Atendida para Retirada de Doações | Sebomelivro</title>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
+
+
+	<style>
+		html, body {
+			height: 100%;
+			margin: 0;
+		}
+		#map {
+			width: 600px;
+			height: 400px;
+		}
+	</style>
+
+	<style>body { padding: 0; margin: 0; } #map { height: 100%; width: 100vw; }</style>
+</head>
+<body>
+
+<div id='map'></div>
+
+<script>
+	var mymap = L.map('map').setView([-23.5505, -46.6333], 11);
+
+	L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic2Vib21lbGl2cm8iLCJhIjoiY2p5ZTl2OG1oMHlmZDNrcW0xdmtlcjR2MCJ9.XJ0EK9vfsTwBgTH82dZEug', {
+		maxZoom: 18,
+		attribution: '&copy; <a href="https://sebomelivro.github.io/busca/">Sebomelivro</a>',
+		id: 'streets-v11'
+	}).addTo(mymap);
+
+	L.circle([-23.5505, -46.6333], 15000, {
+		color: '#A9A9A9',
+		fillColor: '#D3D3D3',
+		fillOpacity: 0.5
+	}).addTo(mymap).bindPopup("Área atendida para retirada de doações");
+
+	mymap.locate();
+
+	function onLocationFound(e) {
+
+	    L.marker(e.latlng).addTo(mymap)
+	        .bindPopup("Você está aqui").openPopup();
+
+	    L.circle(e.latlng).addTo(mymap);
+	}
+
+	mymap.on('locationfound', onLocationFound);
+
+	function onLocationError(e) {
+	    alert(e.message);
+	}
+
+mymap.on('locationerror', onLocationError);
+
+
+</script>
+
+
+
+</body>
+</html>
