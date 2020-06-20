@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Busca Sebomelivro</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Garimpe todos os livros disponíveis por título ou autor">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/png" href="./rato.png" />
+<style>
+html { height: 100%; }
+body { font-family: Cantarell; }
+a { color: #000; text-decoration: none; }
+.center { width: 350px; height: 250px; position: absolute; top:-30px; bottom: 0; left: 0; right: 0; margin: auto; text-align: center; }
+.busca { border: 1px solid #333; box-shadow: 0 2px 3px #777; border-radius: 5px; padding-left: 10px; padding-right: 40px; font-size: 18px; color: #000; width: 320px; height: 40px; outline: none; }
+.lupa { width: 40px; height: 40px; background: transparent; text-align: center; color: #000; border: 0; cursor: pointer; font-size: 20px; position: relative; margin-left: -45px; outline: none; }
+.botao { border: 0; border-radius: 5px; box-shadow: 0 2px 3px #777; height: 32px; width: 120px; margin: 8px; padding: 0px; background-color: #000; color: #fff; font-size: 16px; font-weight: bold; outline: none; cursor: pointer; }
+.mobile-container { margin: auto; }
+.topnav { overflow: hidden; position: relative; outline: none; }
+.topnav #myLinks { display: none; outline: none; }
+.topnav a { padding: 2px 12px; margin-top: 10px; text-decoration: none; font-size: 22px; display: block; outline: none; }
+.topnav a.icon { display: block; position: absolute; right: 0; top: 0; outline: none; }
+.overlay { height: 100%; width: 0; position: fixed; z-index: 2; top: 0; left: 0; background-color: rgb(0,0,0); background-color: rgba(0,0,0, 0.9); overflow-x: hidden; transition: 0.1s; }
+.overlay-content { position: relative; top: 20%; width: 100%; text-align: center; margin-top: 15px; }
+.overlay a { padding: 4px; text-decoration: none; font-size: 18px; color: #fff; display: block; transition: 0.1s; }
+.overlay a:hover, .overlay a:focus, { color: #fff; }
+.overlay .closebtn { position: absolute; padding: 0; top: -4px; right: 18px; font-size: 40px; outline: none; }
+@media screen and (max-height: 450px) { .overlay a {font-size: 20px} .overlay .closebtn { font-size: 40px; top: -4px; right: 18px; outline: none; }}
+</style>
+</head>
+<body>
+
+<div class="mobile-container">
+<div class="topnav">
+  <a href="./"><b>Sebomelivro</b></a>
+<div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+    <a href="https://wa.me/5511981350566?text=Oi!%20Quero%20doar%20livros!">Doe seus livros</a>
+    <a href="https://wa.me/5511981350566?text=Oi!%20Quero%20retirar%20um%20pedido%20no%20metro">Retire pedidos no Metrô</a>
+    <a href="https://www.instagram.com/p/B60bUSTDWmG/" target="_blank">Sirva-se: Livros Grátis</a>
+    <a href="https://www.estantevirtual.com.br/qualificacoes?vendedor=4396180" target="_blank">Avaliações dos Clientes</a>
+    <a href="https://write.as/sebomelivro/" target="_blank">Apenas Leia</a>
+    <a href="https://instagram.com/sebomelivro" target="_blank">Instagram</a>
+    <a href="https://wa.me/5511981350566?text=Oi!%20Tira%20uma%20duvida?">WhatsApp</a>
+    <a href="mailto:sebomelivro@yahoo.com?subject=Sebomelivro&body=Oi!%20Tira%20uma%20duvida?">E-mail</a>
+  </div>
+</div>
+  <a href="javascript:void(0);" class="icon" onclick="openNav()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+<div>
+
+<div class="center">
+<img src="./rato.jpg" height="150" width="150" Alt="Sebomelivro">
+
+<form action="https://www.estantevirtual.com.br/busca" method="get">
+  <input type="search" class="busca" name="q" id="search" autocomplete="off" placeholder="Digite um título ou autor">
+  <input type="hidden" name="vendedor" value="sebomelivro">
+  <input type="hidden" name="agrupar" value="0">
+  <button type="submit" class="lupa"><i class="fa fa-search"></i></button>
+  <br><input type="submit" class="botao" value="Garimpar">
+  <input type="button" class="botao" onclick="location.href='https://www.estantevirtual.com.br/busca?vendedor=sebomelivro&produto=0&b_order=data_cadastro&agrupar=0&f=1';" value="Ver todos">
+</form></div>
+
+</div></div>
+
+<script>
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+</script>
+
+</body>
+</html>
