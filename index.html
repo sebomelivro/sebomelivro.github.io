@@ -3,114 +3,61 @@
 <head>
     <title>Sebomelivro</title>
     <meta charset="UTF-8">
-    <meta name="description" content="Incentivando a leitura através da venda de livros a partir de 6 reais, retirada gratuita de doações e deixando sacolas de livros em locais públicos.">
+    <meta name="description" content="Deixe um livro te encontrar">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" type="image/png" href="./rato.png" />
 <style>
 html { height: 100%; }
-body { font-family: Cantarell; }
-a { color: #000; text-decoration: none; }
-.center { width: 350px; height: 250px; position: absolute; top:-30px; bottom: 0; left: 0; right: 0; margin: auto; text-align: center; }
-.busca { border: 1px solid #333; box-shadow: 0 2px 3px #777; border-radius: 5px; padding-left: 10px; padding-right: 40px; font-size: 18px; color: #000; width: 320px; height: 40px; outline: none; }
-.lupa { width: 40px; height: 40px; background: transparent; text-align: center; color: #000; border: 0; cursor: pointer; font-size: 20px; position: relative; margin-left: -45px; outline: none; }
-.botao { border: 0; border-radius: 5px; box-shadow: 0 2px 3px #777; height: 32px; width: 120px; margin: 8px; padding: 0px; background-color: #000; color: #fff; font-size: 16px; font-weight: bold; outline: none; cursor: pointer; }
-.mobile-container { margin: auto; }
-.topnav { overflow: hidden; position: relative; outline: none; }
-.topnav #myLinks { display: none; outline: none; }
-.topnav a { padding: 2px 12px; margin-top: 10px; text-decoration: none; font-size: 22px; display: block; outline: none; }
-.topnav a.icon { display: block; position: absolute; right: 0; top: 0; outline: none; }
-.overlay { height: 100%; width: 0; position: fixed; z-index: 2; top: 0; left: 0; background-color: rgb(0,0,0); background-color: rgba(0,0,0, 0.9); overflow-x: hidden; transition: 0.1s; }
-.overlay-content { position: relative; top: 20%; width: 100%; text-align: center; margin-top: 15px; }
-.overlay a { padding: 4px; text-decoration: none; font-size: 18px; color: #fff; display: block; transition: 0.1s; }
-.overlay a:hover, .overlay a:focus, { color: #fff; }
-.overlay .closebtn { position: absolute; padding: 0; top: -4px; right: 18px; font-size: 40px; outline: none; }
-@media screen and (max-height: 450px) { .overlay a {font-size: 20px} .overlay .closebtn { font-size: 40px; top: -4px; right: 18px; outline: none; }}
-.about { background-color: #fff; position: fixed; left: 0; bottom: 0; width: 100%; cursor: pointer; padding: 15px; width: 100%; border: none; text-align: center; outline: none; font-size: 16px; transition: 0.1s; }
-.about:after { content: 'Saiba mais'; font-weight: bold; padding-left: 10px}
-.active:after { content: "Voltar"; }
-.panel { max-height: 0; padding: 0 10px 0 10px; overflow-x: hidden; transition: max-height 0.1s ease-out; position: fixed; z-index: 1; top: 0; left: 0; bottom: 45px; background-color: #fff }
-.panel a { font-weight: bold; text-decoration: underline; }
+body { font-family: Arial; margin: auto 30px; text-align: justify; }
+div {     margin-bottom: 30px; margin-top: 10px; }
+a { color: #000; text-decoration: underline; }
+h1 { font-size: 20px; text-decoration: bold; }
+.center { text-align: center; }
+.justify { text-align: justify; }
 </style>
 </head>
 <body>
 
-<div class="mobile-container">
-<div class="topnav">
-  <a href="./"><b>Sebomelivro</b></a>
-<div id="myNav" class="overlay">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <div class="overlay-content">
-    <a href="https://wa.me/5511981350566?text=Oi!%20Quero%20doar%20livros!">Doe seus livros</a>
-    <a href="https://wa.me/5511981350566?text=Oi!%20Quero%20retirar%20um%20pedido%20no%20metro">Retire pedidos no Metrô</a>
-    <a href="https://www.instagram.com/p/B60bUSTDWmG/" target="_blank">Sirva-se: Livros Grátis</a>
-    <a href="https://www.estantevirtual.com.br/qualificacoes?vendedor=4396180" target="_blank">Avaliações dos Clientes</a>
-    <a href="https://write.as/sebomelivro/" target="_blank">Apenas Leia</a>
-    <a href="https://instagram.com/sebomelivro" target="_blank">Instagram</a>
-    <a href="https://wa.me/5511981350566?text=Oi!%20Tira%20uma%20duvida?">WhatsApp</a>
-    <a href="mailto:sebomelivro@yahoo.com?subject=Sebomelivro&body=Oi!%20Tira%20uma%20duvida?">E-mail</a>
-  </div>
-</div>
-  <a href="javascript:void(0);" class="icon" onclick="openNav()">
-    <i class="fa fa-bars"></i>
-  </a>
+<div class="center">
+
+<img src="./rato.jpg" height="150" width="150" Alt="Sebomelivro">
+
+<h1>Deixe um livro te encontrar</h1>
+
 </div>
 <div>
 
+<p>Esse é um projeto pessoal, trabalho, ganha pão, chame como quiser, do que tenho feito desde outubro de 2017. O objetivo? Incentivar a leitura de livros.</p>
+
+<p>Trabalho de algumas formas: uma é pra quem está procurando um livro específico. Todos que tenho estão cadastrados no <a href="https://estantevirtual.com.br/livreiros/sebomelivro">Estante Virtual</a>. Utilize qualquer ferramenta de busca que o livro aparece se estiver disponível. Tem até uma <a href="https://sebomelivro.github.io/busca.html">busca</a> que desenvolvi pra te ajudar.</p>
+
+<p>Uma outra forma, que é a que eu gosto mais pois valoriza meu trabalho e de todos os <a href="https://write.as/sebomelivro/o-papel-do-livreiro">livreiros</a> que ainda existem, é o de possibilitar que os livros que tenho encontrem as pessoas. Que eles sejam lidos. Como não tenho loja física, as pessoas não podem ficar olhando pras minhas estantes até um livro pular na mão delas. E mesmo se tivesse isso atingiria apenas quem mora perto. Quero proporcionar isso para todos os brasileiros. E como faço? Através de postagens diárias no Stories do meu <a href="https://instagram.com/sebomelivro">Instagram</a>. Dá uma olhada atenta se você quiser sair da sua bolha literária e descobrir autores e títulos que nunca ouviu falar. Só posto no Stories. Assim eles desaparecem depois de 24 horas e dão espaço para outros livros. Alguns são vendidos, outros voltam para estante e aparecerão novamente quando eles quiserem. Afinal não sou eu que escolho, são eles que me pedem para serem postados. Por isso não procure os livros disponíveis no feed do Intagram. Eles não estão lá.</p>
+
+<p>Outra forma que também adoro é a doação de livros. Coloco alguns em uma sacola de papelão e deixo em um ponto de ônibus que seja coberto. Assim não molha se chover. Essa iniciativa eu chamei de <i>Sirva-se: Livros Grátis</i>. Tem mais detalhes de como ela funciona <a href="https://www.instagram.com/p/B60bUSTDWmG/">aqui</a>. Compartilhe para mais pessoas se engajarem a fazer o mesmo.</p>
+
+<p>Se você quiser apoiar meu trabalho, eu aceito doação de livros. Busco no local, de segunda a domingo, e com hora marcada (entre 11h e 15h) gratuitamente. Até 15km do centro de SP (ver <a href="https://sebomelivro.github.io/mapa.html">mapa</a>). Agende um horário pelo <a href="https://wa.me/5511981350566?text=Oi!%20Quero%20doar%20livros">WhatsApp</a> ou <a href="https://instagram.com/sebomelivro">Instagram</a>.</p>
+
+<p>Você pode receber os livros que comprar em qualquer endereço do Brasil ou retirar pessoalmente nas catracas do metrô <a href="https://www.google.com.br/maps/place/Fradique+Coutinho/@-23.5661672,-46.6864159,17z/data=!3m1!4b1!4m5!3m4!1s0x94ce57761058e9e1:0x50a8d092b04e045b!8m2!3d-23.5661672!4d-46.6842272">Fradique Coutinho</a>.</p>
+
+<p>Confira as avaliações de quem já comprou no <a href="https://www.estantevirtual.com.br/qualificacoes?vendedor=4396180">Estante Virtual</a> e no <a href="https://search.google.com/local/reviews?placeid=ChIJU56ZmW1XzpQREdrYjo5TU3Y">Google</a>.</p>
+
+<p>Se quiser ler dicas, utilidades públicas literárias, campanhas e outras baboseiras que escrevi estão todas <a href="https://write.as/sebomelivro">aqui</a>.</p>
+
+<p>Por fim gostaria de pedir, pra todos que realmente gostam de livros, que apoiem as livrarias do seu bairro ou cidade. Seja ela de livros novos ou usados (sebos). Muitos brasileiros não tem essa oportunidade. A livraria mais próxima fica muito longe. Todas as outras fecharam. E se você não tem acesso a nenhuma livraria, compre direto da editora. São elas que garantem que os livros sejam publicados. Não tenha pressa para encontrar um livro específico. Com certeza tem vários outros, que você ainda não leu, esperando para serem lidos e disponíveis. Pra quem mora em São Paulo fiz um <a href="https://write.as/sebomelivro/rota-dos-livros-em-pinheiros">roteiro</a> das que mais gosto aqui onde moro. Visite-as!
+
+<p>Sim, essa página é só isso mesmo. Se você chegou até aqui é sinal que gosta de ler e só por isso já fico feliz. Agora já pode ir ler um livro.</p>
+
+</div>
 <div class="center">
-<img src="./rato.jpg" height="150" width="150" Alt="Sebomelivro">
 
-<form action="https://www.estantevirtual.com.br/busca" method="get">
-  <input type="search" class="busca" name="q" id="search" autocomplete="off" placeholder="Digite um título ou autor">
-  <input type="hidden" name="vendedor" value="sebomelivro">
-  <input type="hidden" name="agrupar" value="0">
-  <button type="submit" class="lupa"><i class="fa fa-search"></i></button>
-  <br><input type="submit" class="botao" value="Garimpar">
-  <input type="button" class="botao" onclick="location.href='https://www.estantevirtual.com.br/busca?vendedor=sebomelivro&produto=0&b_order=data_cadastro&agrupar=0&f=1';" value="Ver todos">
-</form></div>
+<h1>Se livre das telas. Leia um livro.</h1>
 
-<button class="about"></button><div class="panel">
+</div>
+<div>
 
-<p>Incentivando a leitura através da venda de livros a partir de 6 reais, retirada gratuita de doações com hora marcada e deixando sacolas cheia de livros em locais públicos.</p>
+<p>Andrews Guerreiro<br>@sebomelivro</p>
 
-<p>Todos os livros disponíveis estão cadastrados no <a href="https://www.estantevirtual.com.br/livreiros/sebomelivro" target="_blank">Estante Virtual</a>. Utilize a <a href="https://sebomelivro.github.io/">busca</a> para garimpar por título ou autor. Os livros vendidos são enviados, em até 1 dia útil, pelos Correios (Brasil), entregues com hora marcada nas catracas do <a href="https://www.google.com.br/maps/place/Fradique+Coutinho/@-23.5661672,-46.6864159,17z/data=!3m1!4b1!4m5!3m4!1s0x94ce57761058e9e1:0x50a8d092b04e045b!8m2!3d-23.5661672!4d-46.6842272">Metrô Fradique Coutinho</a>, ou entregues no mesmo dia em endereços no bairro de Pinheiros (SP).</p>
-
-<p>As retiradas de doações de livros são grátis (até <a href="./mapa.html" target="_blank">15km</a> do centro de SP), com hora marcada e de segunda a domingo. Os livros retirados são destinados à venda online, <a href="https://www.instagram.com/p/B60bUSTDWmG/" target="_blank">doados novamente</a> ou <a href="https://write.as/sebomelivro/como-os-sebos-ajudam-o-meio-ambiente" target="_blank">reciclados</a>. Agende a retirada pelo <a href="https://wa.me/5511981350566?text=Oi!%20Quero%20doar%20livros">WhatsApp</a> ou <a href="https://instagram.com/sebomelivro" target="_blank">Instagram</a>.</p>
-
-<p>A iniciativa <a href="https://www.instagram.com/p/B60bUSTDWmG/" target="_blank">Sirva-se: Livros Grátis</a> consiste em uma sacola de papel, cheia de livros, deixada em lugares públicos de grande circulação. Entenda <a href="https://write.as/sebomelivro/sirva-se-livros-gratis" target="_blank">aqui</a> como funciona.
-
-<p>Confira as avaliações dos clientes no <a href="https://www.estantevirtual.com.br/qualificacoes?vendedor=4396180">Estante Virtual</a> e no <a href="https://search.google.com/local/reviews?placeid=ChIJU56ZmW1XzpQREdrYjo5TU3Y" target="_blank">Google</a>.</p>
-
-<p>Também estou no <a target="_blank" href="https://instagram.com/sebomelivro" rel="noopener noreferrer">Instagram</a> e escrevo alguns <a href="https://write.as/sebomelivro" target="_blank">textos</a>.</p>
-
-<p>Se quiser tirar alguma dúvida, entre em contato pelo <a href="https://wa.me/5511981350566?text=Oi!%20Tira%20uma%20duvida?">WhatsApp</a>, <a href="https://instagram.com/sebomelivro" target="_blank">Instagram</a> ou <a href="mailto:sebomelivro@yahoo.com?subject=Sebomelivro&body=Oi!%20Tira%20uma%20duvida?">E-mail</a>.</p>
-
-</div></div></div>
-
-<script>
-function openNav() {
-  document.getElementById("myNav").style.width = "100%";
-}
-
-function closeNav() {
-  document.getElementById("myNav").style.width = "0%";
-}
-
-var acc = document.getElementsByClassName("about");
-var i;
-
-for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var panel = this.nextElementSibling;
-    if (panel.style.maxHeight) {
-      panel.style.maxHeight = null;
-    } else {
-      panel.style.maxHeight = panel.scrollHeight + "px";
-    } 
-  });
-}
-</script>
+</div>
 
 </body>
 </html>
