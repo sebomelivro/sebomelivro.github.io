@@ -56,8 +56,11 @@ a { color: #000; text-decoration: none; }
 <div class="center">
 <img src="./rato.jpg" height="150" width="150" Alt="Sebomelivro">
 
-<form action="https://estantevirtual.com.br/livreiros/sebomelivro" method="get">
-  <input type="search" class="busca" name="qt" id="search" autocomplete="off" placeholder="Digite um título ou autor">
+<form action="https://www.estantevirtual.com.br/busca?vendedor=sebomelivro&agrupar=0&b_order=preco" method="get">
+  <input type="search" class="busca" name="q" id="search" autocomplete="off" placeholder="Digite um título ou autor">
+  <input type="hidden" id="search" name="vendedor" value="sebomelivro">
+  <input type="hidden" id="search" name="agrupar" value="0">
+  <input type="hidden" id="search" name="order" value="preco">
   <button type="submit" class="lupa"><i class="fa fa-search"></i></button>
   <br><input type="submit" class="botao" value="Garimpar">
   <input type="button" class="botao" onclick="location.href='https://www.estantevirtual.com.br/livreiros/sebomelivro';" value="Ver todos">
