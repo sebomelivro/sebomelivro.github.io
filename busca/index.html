@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sebomelivro</title>
+<meta charset="UTF-8">
+<meta name="description" content="Compra, venda e doação de livros usados. Busca por título ou autor. Agende a retirada gratuita de doações em São Paulo">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+a { color: #000; }
+p { text-align: center; font-size: 24px; }
+h1 { text-align: center; font-size: 16px; }
+form, button, input, select { text-align: center; font-size: 22px; }
+input { text-align: left; }
+.center { width: 350px; height: 250px; position: absolute; top: -80px; bottom: 0; left: 0; right: 0; margin: auto; text-align: center; }
+</style>
+</head>
+<body>
+<div class="center">
+<p>Digite um título ou autor</p>
+<form name="searchform" onSubmit="return dosearch();">
+<input type="search" name="searchterms"><br><br>
+<select name="sengines">
+<option value="https://www.estantevirtual.com.br/busca?vendedor=sebomelivro&agrupar=0&b_order=preco&q=" selected>Sebomelivro</option>
+<option value="https://www.estantevirtual.com.br/busca?vendedor=desculpeapoeira&vendedor=akiraebooks&vendedor=sebobasques2&vendedor=amadeuamadei&vendedor=seboavalovara&vendedor=seboculturalpinheiros&vendedor=sebouniversopinheiros&vendedor=espacodolivro&vendedor=livrariaacervo&agrupar=0&b_order=preco&q=">Sebos Pinheiros</option>
+<option value="https://www.estantevirtual.com.br/busca?q=">Estante Virtual</option>
+<option value="https://www.amazon.com.br/s?k=">Amazon</option>
+<option value="https://www.google.com/search?hl=pt-BR&tbm=shop&q=">Google Shopping</option>
+<option value="https://www.skoob.com.br/livro/lista/">Skoob</option>
+<option value="https://www.goodreads.com/search?utf8=Ã¢Å“â€œ&query=">Goodreads</option>
+</select><br><br>
+<input type="submit" value="Procurar">
+<input type="reset" value="Limpar">
+</form>
+</div>
+<script type="text/javascript">
+function dosearch() {
+var sf=document.searchform;
+var submitto = sf.sengines.options[sf.sengines.selectedIndex].value + escape(sf.searchterms.value);
+window.location.href = submitto;
+return false;
+}
+</script>
+</body>
+</html>
