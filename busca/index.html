@@ -8,7 +8,6 @@
 <style>
 a { color: #000; }
 p { text-align: center; font-size: 24px; }
-h1 { text-align: center; font-size: 16px; }
 form, button, input, select { text-align: center; font-size: 22px; }
 input { text-align: left; }
 .center { width: 350px; height: 250px; position: absolute; top: -80px; bottom: 0; left: 0; right: 0; margin: auto; text-align: center; }
@@ -17,9 +16,8 @@ input { text-align: left; }
 <body>
 <div class="center">
 <p>Busca Sebomelivro</p>
-<h1>Digite um título ou autor</h1>
 <form name="searchform" onSubmit="return dosearch();">
-<input type="search" name="searchterms"><br><br>
+<input type="search" name="searchterms" autofocus><br><br>
 <select name="sengines">
 <option value="https://www.estantevirtual.com.br/busca?vendedor=sebomelivro&agrupar=0&b_order=preco&q=" selected>Sebomelivro</option>
 <option value="https://www.estantevirtual.com.br/busca?vendedor=desculpeapoeira&vendedor=akiraebooks&vendedor=sebobasques2&vendedor=amadeuamadei&vendedor=seboavalovara&vendedor=seboculturalpinheiros&vendedor=sebouniversopinheiros&vendedor=espacodolivro&vendedor=livrariaacervo&agrupar=0&b_order=preco&q=">Sebos Pinheiros</option>
