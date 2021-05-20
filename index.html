@@ -24,6 +24,9 @@
   form.busca button { margin: 5px auto; width: 110px; height: 38px; padding: 5px; font-size: 17px; border: 1px solid grey; cursor: pointer; border-radius: 10px; }
   *:focus { outline: none; }
   .email { position: fixed; right: 8px; bottom: 8px; }
+  form.newsletter input[type=email] { height: 38px; padding: 10px; font-size: 17px; border: 1px solid grey; width: 70%; border-radius: 10px 0px 0px 10px; float: left; }
+  form.newsletter input[type=submit] { width: 30%; padding: 5px; height: 38px; font-size: 17px; border-left: 0px; border-top: 1px solid grey; border-right: 1px solid grey; border-bottom: 1px solid grey; cursor: pointer; border-radius: 0px 10px 10px 0px; float: right; }
+
 </style>
 
 </head>
@@ -127,6 +130,21 @@
 
   <p>Não realizo nenhum tipo de troca</p>
   
+
+<h2>Newsletter Sebomelivro</h2>
+
+  <p>Quer receber, todo domingo, gratuitamente, sugestões de livros usados, raros ou esgotados, que podem te surpreender?
+
+<div id="revue-embed">
+  <form action="https://www.getrevue.co/profile/sebomelivro/add_subscriber" method="post" id="revue-form" name="revue-form" target="_blank" class="newsletter">
+  <div class="revue-form-group">
+    <input class="revue-form-field" placeholder="Digite seu e-mail..." type="email" name="member[email]" id="member_email">
+  <div class="revue-form-actions">
+    <input type="submit" value="Assinar" name="member[subscribe]" id="member_submit">
+  </div>
+  </form>
+</div><br><br>
+
 
 <h2>Obrigado e boas leituras!</h2>
 
