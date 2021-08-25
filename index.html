@@ -19,7 +19,7 @@
   p { font-size: 16px; font-family: sans-serif; }
   .sub { font-size: 14px; font-family: sans-serif; margin-top: -25px; }
   * { box-sizing: border-box; }
-  .center { text-align: center; }
+  .center { text-align: center; margin-bottom: 71px; }
   *:focus { outline: none; }
   .whatsapp { position: fixed; right: 8px; bottom: 8px; }
   form.busca input[type=search] { height: 40px; padding: 10px; font-size: 17px; border: 1px solid grey; width: 70%; border-radius: 10px 0px 0px 10px; float: left; }
@@ -34,15 +34,6 @@
 <img src="logo.jpg" height="70px" height="70px" style="float:right;border-radius:70px">
 <h1>Sebomelivro</h1>
 <div class="sub">Livre-se das telas. Leia um livro.</div>
-
-<br><div class="center">
-  <form class="busca" action="https://www.estantevirtual.com.br/busca" target="_blank">
-  <input type="hidden" name="vendedor" value="sebomelivro">
-  <input type="hidden" name="agrupar" value="0">
-  <input type="search" placeholder="Digite um título ou autor..." name="q">
-  <button type="submit">Garimpar</button>
-  </form><br><br>
-</div>
 
 <img src="acervo.jpg" width="100%">
 
@@ -66,7 +57,18 @@
   
   <p>Compre os livros disponíveis pela <a href="https://www.estantevirtual.com.br/livreiros/sebomelivro" target="_blank">Estante Virtual</a> ou pelo <a href="https://api.whatsapp.com/send?phone=5511981350566&text=Oi, Andrews!">WhatsApp</a>
 
-  <p>Confira as <a href="https://www.estantevirtual.com.br/qualificacoes?vendedor=4396180">avaliações</a> de quem já comprou
+  <p>Utilize a busca abaixo para garimpar os livros à venda:</p>
+  
+  <div class="center">
+  <form class="busca" action="https://www.estantevirtual.com.br/busca" target="_blank">
+  <input type="hidden" name="vendedor" value="sebomelivro">
+  <input type="hidden" name="agrupar" value="0">
+  <input type="search" placeholder="Digite um título ou autor..." name="q">
+  <button type="submit">Garimpar</button>
+  </form>
+  </div>
+  
+  <p>Confira as <a href="https://www.estantevirtual.com.br/qualificacoes?vendedor=4396180">avaliações</a> de quem já comprou</p>
     
 
 <h2>Livros preferidos</h2>
