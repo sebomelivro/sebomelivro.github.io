@@ -5,6 +5,14 @@
 <title>Sebo me livro</title>
 <link rel="icon" type="image/jpg" href="logo.webp" />
 
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+   integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+   crossorigin=""/>
+   
+<script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+   integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+   crossorigin=""></script>
+
 <meta charset="utf-8">
 <meta name="description" content="Garimpe livros que você quer ou nem sabe que existem. Agende uma retirada gratuita de doações. Venda os livros que você não quer mais.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,11 +25,12 @@
   h2 { font-size: 22px; margin-top: 40px; font-family: sans-serif; background-color: #000000; border-radius: 10px; text-align: center; color: #ffffff }
   p { font-size: 16px; font-family: sans-serif; }
   .sub { font-size: 18px; font-family: sans-serif; margin-top: -40px; text-align: center; }
-  .footer { font-size: 14px; text-align: center; }
   .stores { display: inline-block; margin-left: auto; margin-right: auto; padding-left: 10px; padding-right: 10px; }
   #stores { text-align:center; text-decoration: none; }
   .center { text-align: center; margin-bottom: 72px; }
   .whatsapp { position: fixed; right: 8px; bottom: 8px; }
+  #retirada { height: 300px; }
+  #metro { height: 300px; }
 </style>
 
 </head>
@@ -50,7 +59,9 @@
 <h2>Retire seu pedido</h2>
 
   <p>No metrô <a href="https://www.viaquatro.com.br/linha-4-amarela/estacoes/fradique-coutinho?stationid=19579" target="_blank">Fradique Coutinho</a> e arredores</p>
-
+  
+  <div id="metro"></div>
+  
   <p>Combine um horário pelo <a href="https://api.whatsapp.com/send?phone=5511981350566&text=Oi, quero retirar um pedido">WhatsApp</a></p>
 
   
@@ -58,7 +69,9 @@
   
   <p>Agende a retirada pelo <a href="https://api.whatsapp.com/send?phone=5511981350566&text=Oi, quero doar meus livros">WhatsApp</a>
 
-  <p>Ela é grátis se for até 10km do centro de SP (confira pelo <a href="mapa.html">mapa</a>)</p>
+  <p>Ela é grátis se for até 10km do centro de SP</p>
+  
+  <div id="retirada"></div>
   
   
 <h2>Como vender livros</h2>
@@ -68,11 +81,42 @@
   <p>Em pouco tempo eu respondo quais eu compro e quanto pago em cada um</p>
 
   
+<h2>Foto do acervo</h2>
+
+  <img src="acervo.jpg" width="100%" style="border-radius: 10px;">
+
 <h2>Boas leituras!</h2>
 
-  <p class="footer">Sebo digital desde 2017. Sem loja física.<br><a href="mailto:contato@sebomelivro.com?subject=Sebo me livro">contato@sebomelivro.com</a></p>
+  <img src="andrews.jpg" height="80px" width="80px" style="border-radius: 40px; float: left; margin-right: 10px">
+  
+  <p><b>Andrews Guerreiro</b><br>Livreiro<br><a href="mailto:contato@sebomelivro.com?subject=Sebo me livro">contato@sebomelivro.com</a></p>
   
 <a href="https://api.whatsapp.com/send?phone=5511981350566&text=Oi, Sebo me livro"><img class="whatsapp" src="whatsapp.png" width="45" height="45"</a>
+
+
+<script>
+
+var metro = L.map('metro').setView([-23.5663, -46.6841], 18);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '© OpenStreetMap'
+}).addTo(metro);
+
+var retirada = L.map('retirada').setView([-23.5505, -46.6333], 10);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '© OpenStreetMap'
+}).addTo(retirada);
+	
+L.circle([-23.5505, -46.6333], 10000, {
+    color: '#A9A9A9',
+    fillColor: '#D3D3D3',
+    fillOpacity: 0.5
+}).addTo(retirada).bindPopup("Área para retirada gratuita de doações");
+
+</script>
 
 </body>
 </html>
