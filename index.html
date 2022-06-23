@@ -97,24 +97,28 @@
 
 <script>
 
-var metro = L.map('metro').setView([-23.5663, -46.6841], 18);
+var metro = L.map('metro').setView([-23.5661, -46.68415], 18);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
-    attribution: '© OpenStreetMap'
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(metro);
+
+L.marker([-23.56624, -46.68414]).addTo(metro)
+    .bindPopup('Metrô Fradique Coutinho')
+    .openPopup();
 
 var retirada = L.map('retirada').setView([-23.5505, -46.6333], 10);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
-    attribution: '© OpenStreetMap'
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(retirada);
 	
 L.circle([-23.5505, -46.6333], 10000, {
     color: '#A9A9A9',
     fillColor: '#D3D3D3',
-    fillOpacity: 0.4
+    fillOpacity: 0.3
 }).addTo(retirada).bindPopup("Área para retirada gratuita de doações");
 
 </script>
