@@ -113,7 +113,7 @@ L.marker([-23.56624, -46.68414]).addTo(metro)
     .bindPopup('Metrô Fradique Coutinho')
     .openPopup();
 
-var retirada = L.map('retirada').setView([-23.5505, -46.6333], 10);
+var retirada = L.map('retirada', { gestureHandling: true }).setView([-23.5505, -46.6333], 10);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
