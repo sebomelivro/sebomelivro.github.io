@@ -5,19 +5,6 @@
 <title>Sebo me livro</title>
 <link rel="icon" type="image/jpg" href="logo.webp" />
 
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
-   integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
-   crossorigin=""/>
-   
-<script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
-   integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
-   crossorigin=""></script>
-	
-<link rel="stylesheet" href="//unpkg.com/leaflet-gesture-handling/dist/leaflet-gesture-handling.min.css"
-        type="text/css">
-
-<script src="//unpkg.com/leaflet-gesture-handling"></script>
-
 <meta charset="utf-8">
 <meta name="description" content="Garimpe livros que você quer ou nem sabe que existem. Agende uma retirada gratuita de doações. Venda os livros que você não quer mais.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,8 +20,6 @@
   .vendas { display: inline-block; margin-left: auto; margin-right: auto; padding-left: 10px; padding-right: 10px; }
   .footer { font-size: 15px; font-family: sans-serif; line-height: 1.3; } 
   #vendas { text-align: center; text-decoration: none; }
-  #retirada { height: 300px; border-radius: 10px; }
-  #metro { height: 300px; border-radius: 10px; }
 </style>
 
 </head>
@@ -63,7 +48,7 @@
 
   <p>No metrô <a href="https://www.viaquatro.com.br/linha-4-amarela/estacoes/fradique-coutinho?stationid=19579" target="_blank">Fradique Coutinho</a> e arredores</p>
   
-  <div id="metro"></div>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.0633768741236!2d-46.68641588474011!3d-23.566167184680463!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce57761058e9e1%3A0x50a8d092b04e045b!2sFradique%20Coutinho!5e0!3m2!1spt-BR!2sbr!4v1656934764817!5m2!1spt-BR!2sbr" width="100%" height="400" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   
   <p>Combine um horário pelo <a href="https://api.whatsapp.com/send?phone=5511981350566&text=Oi, quero retirar um pedido">WhatsApp</a></p>
 
@@ -73,9 +58,8 @@
   <p>Agende a retirada pelo <a href="https://api.whatsapp.com/send?phone=5511981350566&text=Oi, quero doar meus livros">WhatsApp</a>
 
   <p>Ela é grátis se for até 10km do centro de SP</p>
-  
-  <div id="retirada"></div>
-  
+
+  <p>Confira sua localização pelo <a href="mapa.html" target="_blank">mapa</a></p> 
   
 <h2>Como vender livros</h2>
   
@@ -93,34 +77,6 @@
   <img src="andrews.jpg" height="60px" width="60px" style="border-radius: 30px; float: left; margin-right: 10px">
   
   <p class="footer"><b>Andrews Guerreiro</b><br>Livreiro<br><a href="mailto:contato@sebomelivro.com?subject=Sebo me livro">contato@sebomelivro.com</a></p>
-
-<script>
-
-var metro = L.map('metro', { gestureHandling: true }).setView([-23.5661, -46.68415], 18);
-
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(metro);
-
-L.marker([-23.56624, -46.68414]).addTo(metro)
-    .bindPopup('Metrô Fradique Coutinho')
-    .openPopup();
-
-var retirada = L.map('retirada', { gestureHandling: true }).setView([-23.5505, -46.6333], 10);
-
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(retirada);
-	
-L.circle([-23.5505, -46.6333], 10000, {
-    color: '#A9A9A9',
-    fillColor: '#D3D3D3',
-    fillOpacity: 0.3
-}).addTo(retirada).bindPopup("Área para retirada gratuita de doações");
-
-</script>
 
 </body>
 </html>
