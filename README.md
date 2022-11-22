@@ -1,3 +1,3 @@
-Site do Sebo me livro
+sebomelivro.com
 
 Criado por Andrews Guerreiro
