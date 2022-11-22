@@ -2,4 +2,4 @@
 
 Criado por Andrews Guerreiro
 
-Conteudo disponibilizado nos termos da licença [Atribuição-SemDerivações-SemDerivados (CC BY-NC-ND) da Creative Commons](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.pt_BR)
+Conteúdo disponibilizado nos termos da licença [Atribuição-SemDerivações-SemDerivados (CC BY-NC-ND) da Creative Commons](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.pt_BR)
