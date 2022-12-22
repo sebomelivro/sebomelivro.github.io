@@ -11,7 +11,7 @@
   .footer { position: fixed; overflow: hidden; background-color: black; bottom: 0; width: 100%; }
   .footer a { float: center; display: inline-block; color: white; text-align: center; padding: 10px 12px; text-decoration: none; font-size: 14px; font-family: sans-serif; }
   .footer a:hover { text-decoration: underline; }
-  .search { margin: auto; padding-top: 20px; width: 100%; max-width: 600px; }
+  .search { margin: auto; padding-top: 10px; width: 100%; max-width: 600px; }
   input { margin: 10px; height: 50px; padding: 15px; font-size: 18px; border: 1px solid grey; width: 95%; border-radius: 20px; }
   button { text-align: center; margin: 10px 10px 10px 10px; font-size: 18px; height: 40px; width: 130px; border: 1px solid grey; border-radius: 12px; background-color: black; color: white; }
   *:focus { outline: none; }
