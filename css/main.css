@@ -1,6 +1,6 @@
   html, body { margin: 0; }
   @media (prefers-color-scheme: light) { body { background-color: white; color: black; } a { color: black; }}
-  @media (prefers-color-scheme: dark) { body { background-color: black; color: white; } a { color: white; }}
+  @media (prefers-color-scheme: dark) { body { background-color: #212121; color: white; } a { color: white; }}
   h1 { font-size: 38px; font-family: sans-serif; text-align: center; }
   .main { width: 350px; height: 250px; position: absolute; top: -100px; bottom: 0; left: 0; right: 0; margin: auto; text-align: center; }
   .center { margin: auto; text-align: center; }
