@@ -2,7 +2,7 @@
   @media (prefers-color-scheme: light) { body { background-color: white; color: black; } a { color: black; } input { background-color: white; color: black; } }
   @media (prefers-color-scheme: dark) { body { background-color: #212121; color: white; } a { color: white; } input { background-color: black; color: white; } }
   h1 { font-size: 38px; font-family: sans-serif; text-align: center; }
-  .home { margin: auto; text-align: center; padding-top: 130px; }
+  .home { margin-top: -150px; height: 100vh; overflow: hidden; display: flex; align-items: center; justify-content: center; }
   .center { margin: auto; text-align: center; }
   .text { font-size: 18px; font-family: serif; padding-top: 10px; padding-left: 7px; padding-right: 7px; max-width: 700px; margin: 0 auto; text-align: justify; line-height: 1.6; }
   .sub { font-size: 18px; font-family: sans-serif; margin-top: -30px; text-align: center; }
@@ -13,5 +13,5 @@
   .footer a:hover { text-decoration: underline; }
   .search { margin: auto; padding-top: 10px; width: 100%; max-width: 600px; }
   input { margin: 10px; height: 50px; padding: 15px; font-size: 18px; border: 1px solid grey; width: 95%; border-radius: 20px; }
-  button { text-align: center; margin: 10px 5px 10px 5px; font-size: 18px; height: 40px; width: 130px; border: 0px; border-radius: 5px; background-color: black; color: white; }
+  button { margin: 10px 5px 10px 5px; font-size: 18px; height: 40px; width: 130px; border: 0px; border-radius: 5px; background-color: black; color: white; }
   *:focus { outline: none; }
