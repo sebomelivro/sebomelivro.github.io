@@ -4,7 +4,7 @@
   h1 { font-size: 38px; font-family: sans-serif; text-align: center; }
   .home { margin-top: -150px; height: 100vh; overflow: hidden; display: flex; align-items: center; justify-content: center; }
   .center { margin: auto; text-align: center; }
-  .text { font-size: 18px; font-family: serif; padding-top: 10px; padding-left: 7px; padding-right: 7px; max-width: 700px; margin: 0 auto; text-align: justify; line-height: 1.6; }
+  .text { font-size: 20px; font-family: serif; padding-top: 10px; padding-left: 7px; padding-right: 7px; max-width: 700px; margin: 0 auto; text-align: justify; line-height: 1.6; }
   .sub { font-size: 18px; font-family: sans-serif; margin-top: -30px; text-align: center; }
   .signature { font-size: 16px; font-family: sans-serif; line-height: 1.3; margin: 0 auto; margin-bottom: 60px; max-width: 700px; padding-top: 10px; padding-left: 7px; padding-right: 7px; } 
   navbar { text-align: center }
