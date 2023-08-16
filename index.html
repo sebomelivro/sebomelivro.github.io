@@ -7,26 +7,67 @@
   <title>Sebomelivro</title>
   <link rel="icon" type="image/jpg" href="images/logo.webp">
   <style>
-    html, body { margin: 0; padding: 0; }
-    body { background-color: white; color: black; }
-    a, input { color: black; }
-    @media (prefers-color-scheme: dark) {
-      body { background-color: #212121; color: white; }
-      a, input { color: white; }
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: white;
+      color: black;
+      font-family: sans-serif;
+      line-height: 1.6;
     }
-    .title { font-size: 38px; font-weight: bold; font-family: sans-serif; text-align: center; }
-    .sub { font-size: 18px; font-family: sans-serif; text-align: center; }
-    .center { text-align: center; }
-    .text { font-size: 19px; font-family: sans-serif; padding: 0 7px; max-width: 600px; margin: 0 auto; text-align: justify; line-height: 1.6; }
-    .search { margin: auto; padding-top: 10px; padding-left: 5px; padding-right: 5px; max-width: 600px; }
-    input { margin-top: 10px; height: 50px; padding: 16px; font-size: 18px; border: 1px solid grey; width: 100%; border-radius: 5px; }
-    *:focus { outline: none; }
+    a, input {
+      color: inherit;
+      text-decoration: none;
+    }
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #212121;
+        color: white;
+      }
+    }
+    .center {
+      text-align: center;
+    }
+    .title {
+      font-size: 38px;
+      font-weight: bold;
+    }
+    .sub {
+      font-size: 18px;
+    }
+    .text {
+      font-size: 19px;
+      padding: 0 7px;
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: justify;
+    }
+    .search {
+      margin: auto;
+      padding-top: 10px;
+      max-width: 600px;
+    }
+    input {
+      margin-top: 10px;
+      height: 50px;
+      padding: 16px;
+      font-size: 18px;
+      border: 1px solid grey;
+      width: 100%;
+      border-radius: 5px;
+      outline: none;
+    }
+    img {
+      margin: 10px auto -15px;
+      display: block;
+      border-radius: 75px;
+    }
   </style>
 </head>
 <body>
   <header class="center">
     <a href="/">
-      <img src="images/logo.jpg" height="150px" width="150px" style="margin: 10px auto -15px; display: block; border-radius: 75px;" alt="logo">
+      <img src="images/logo.jpg" height="150px" width="150px" alt="logo">
     </a>
     <div class="title">Sebomelivro</div>
     <div class="sub">Livre-se das telas. Leia um livro.</div>
