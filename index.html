@@ -1,92 +1,131 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Sebo digital de livros usados. Coleta gratuita de doações de livros em São Paulo, SP. Retire seu pedido no metrô Fradique Coutinho ou arredores.">
-  <title>Sebomelivro</title>
-  <link rel="icon" type="image/jpg" href="images/logo.webp">
-  <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Sebo digital de livros usados. Coleta gratuita de doações de livros em São Paulo, SP. Retire seu pedido no metrô Fradique Coutinho ou arredores.">
+<title>Sebomelivro</title>
+<link rel="icon" type="image/jpg" href="images/logo.webp">
+<style>
+  /* Reset CSS */
+  *, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* Global Styles */
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    color: black;
+    font-family: sans-serif;
+    line-height: 1.6;
+  }
+
+  a, input {
+    color: inherit;
+  }
+
+  @media (prefers-color-scheme: dark) {
     body {
-      margin: 0;
-      padding: 0;
-      background-color: white;
-      color: black;
-      font-family: sans-serif;
-      line-height: 1.6;
+      background-color: #212121;
+      color: white;
     }
-    a, input {
-      color: inherit;
-    }
-    @media (prefers-color-scheme: dark) {
-      body {
-        background-color: #212121;
-        color: white;
-      }
-    }
-    .center {
-      text-align: center;
-    }
-    .title {
-      font-size: 38px;
-      font-weight: bold;
-    }
-    .sub {
-      font-size: 18px;
-      margin-top: -15px;
-    }
-    .text {
-      font-size: 19px;
-      padding: 0 7px;
-      max-width: 600px;
-      margin: 0 auto;
-      text-align: justify;
-    }
-    .search {
-      margin: auto;
-      padding: 10px 5px;
-      max-width: 600px;
-    }
-    input {
-      margin-top: 10px;
-      height: 50px;
-      padding: 16px;
-      font-size: 18px;
-      border: 1px solid grey;
-      width: 100%;
-      border-radius: 5px;
-      outline: none;
-    }
-    img {
-      margin: 10px auto -15px;
-      display: block;
-      border-radius: 75px;
-    }
-  </style>
+  }
+
+  /* Center Alignment */
+  .center {
+    text-align: center;
+  }
+
+  /* Header Styles */
+  header {
+    text-align: center;
+    background-color: #007BFF;
+    padding: 15px 0;
+  }
+
+  header img {
+    margin: 10px auto -15px;
+    display: block;
+    border-radius: 75px;
+  }
+
+  header .title {
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+    margin-top: -5px;
+  }
+
+  header .sub {
+    font-size: 16px;
+    color: #BBDEFB;
+    margin-top: -10px;
+  }
+
+  /* Search Form */
+  .search {
+    margin: auto;
+    padding: 20px 5px;
+    max-width: 600px;
+  }
+
+  input[type="search"] {
+    margin-top: 10px;
+    height: 50px;
+    padding: 16px;
+    font-size: 18px;
+    border: 1px solid grey;
+    width: 100%;
+    border-radius: 5px;
+    outline: none;
+  }
+
+  /* Text Content */
+  .text {
+    font-size: 18px;
+    padding: 0 10px;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: justify;
+  }
+
+  .text p {
+    margin-bottom: 15px;
+  }
+
+  .text a {
+    color: #007BFF;
+    text-decoration: none;
+  }
+</style>
 </head>
 <body>
-  <header class="center">
-    <a href="/">
-      <img src="images/logo.jpg" height="150px" width="150px" alt="logo">
-    </a>
-    <div class="title">Sebomelivro</div>
-    <div class="sub">Livre-se das telas. Leia um livro.</div>
-  </header>
-  <div class="search center">
-    <form target="_blank" action="https://www.estantevirtual.com.br/busca">
-      <input type="hidden" name="vendedor" value="sebomelivro">
-      <input type="search" placeholder="Garimpe por título ou autor..." name="q">
-    </form>
-  </div>
-  <div class="text">
-    <p>Todos os livros disponíveis estão à venda na <a href="https://estantevirtual.com.br/livreiros/sebomelivro" target="_blank">Estante Virtual</a>, <a href="https://www.mercadolivre.com.br/perfil/SEBOMELIVRO" target="_blank">Mercado Livre</a> e no <a href="https://shopee.com.br/sebo_me_livro" target="_blank">Shopee</a>.</p>
-    <p>Não quer pagar frete? <a href="https://api.whatsapp.com/send?phone=5511981350566&text=Oi! Quero retirar um pedido pessoalmente">Combine um horário</a> para retirar seu pedido pessoalmente nas catracas do metrô <a href="https://goo.gl/maps/7YvcNnk41Uoz5u6M6" target="_blank">Fradique Coutinho</a> ou arredores.</p>
-    <p>Doe seus livros sem sair de casa. <a href="https://api.whatsapp.com/send?phone=5511981350566&text=Oi! Quero agendar uma coleta de doação de livros">Agende uma coleta gratuita</a> no seu endereço em São Paulo, SP.</p>
-    <p>Acompanhe <a href="https://medium.com/@sebomelivro" target="_blank">artigos</a> e <a href="/blog">notícias</a> sobre tendências, desafios e o valor dos livros na cultura atual, sem anúncios inconvenientes.</p>
-    <p>Dúvidas? Entre em contato pelo <a href="https://api.whatsapp.com/send?phone=5511981350566">WhatsApp</a>.</p>
-    <p>Sim, esta página é só isso mesmo. Sem redes sociais ou vídeos. Assim sobra mais tempo pra gente ler um livro.</p>
-    <p>Boas leituras!</p>
-    <p>Andrews Guerreiro</p>
-  </div>
+<header class="center">
+  <a href="/">
+    <img src="images/logo.jpg" height="150px" width="150px" alt="logo">
+  </a>
+  <div class="title">Sebomelivro</div>
+  <div class="sub">Livre-se das telas. Leia um livro.</div>
+</header>
+<div class="search center">
+  <form target="_blank" action="https://www.estantevirtual.com.br/busca">
+    <input type="hidden" name="vendedor" value="sebomelivro">
+    <input type="search" placeholder="Garimpe por título ou autor..." name="q">
+  </form>
+</div>
+<div class="text">
+  <p>Todos os livros disponíveis estão à venda na <a href="https://estantevirtual.com.br/livreiros/sebomelivro" target="_blank">Estante Virtual</a>, <a href="https://www.mercadolivre.com.br/perfil/SEBOMELIVRO" target="_blank">Mercado Livre</a> e no <a href="https://shopee.com.br/sebo_me_livro" target="_blank">Shopee</a>.</p>
+  <p>Não quer pagar frete? <a href="https://api.whatsapp.com/send?phone=5511981350566&text=Oi! Quero retirar um pedido pessoalmente">Combine um horário</a> para retirar seu pedido pessoalmente nas catracas do metrô <a href="https://goo.gl/maps/7YvcNnk41Uoz5u6M6" target="_blank">Fradique Coutinho</a> ou arredores.</p>
+  <p>Doe seus livros sem sair de casa. <a href="https://api.whatsapp.com/send?phone=5511981350566&text=Oi! Quero agendar uma coleta de doação de livros">Agende uma coleta gratuita</a> no seu endereço em São Paulo, SP.</p>
+  <p>Acompanhe <a href="https://medium.com/@sebomelivro" target="_blank">artigos</a> e <a href="/blog">notícias</a> sobre tendências, desafios e o valor dos livros na cultura atual, sem anúncios inconvenientes.</p>
+  <p>Dúvidas? Entre em contato pelo <a href="https://api.whatsapp.com/send?phone=5511981350566">WhatsApp</a>.</p>
+  <p>Sim, esta página é só isso mesmo. Sem redes sociais ou vídeos. Assim sobra mais tempo pra gente ler um livro.</p>
+  <p>Boas leituras!</p>
+  <p>Andrews Guerreiro</p>
+</div>
 </body>
 </html>
