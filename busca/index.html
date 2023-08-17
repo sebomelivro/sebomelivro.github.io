@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Sebo digital de livros usados. Coleta gratuita de doações de livros em São Paulo, SP. Retire seu pedido no metrô Fradique Coutinho ou arredores.">
 <title>Sebomelivro</title>
-<link rel="icon" type="image/jpg" href="images/logo.webp">
+<link rel="icon" type="image/jpg" href="images/logo.jpg">
 <style>
   /* Reset CSS */
   *, *::before, *::after {
@@ -86,6 +86,24 @@
     outline: none;
   }
 
+  /* Improved Button Styles */
+  button {
+    display: inline-block;
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 5px;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+
   /* Text Content */
   .text {
     font-size: 18px;
@@ -128,17 +146,9 @@
   <form target="_blank" action="https://www.estantevirtual.com.br/busca">
     <input type="hidden" name="vendedor" value="sebomelivro">
     <input type="search" placeholder="Garimpe por título ou autor..." name="q">
+    <button type="submit">Buscar</button>
+    <button type="reset">Limpar</button>
   </form>
-</div>
-<div class="text">
-  <p>Todos os livros disponíveis estão à venda na <a href="https://estantevirtual.com.br/livreiros/sebomelivro" target="_blank">Estante Virtual</a>, <a href="https://www.mercadolivre.com.br/perfil/SEBOMELIVRO" target="_blank">Mercado Livre</a> e no <a href="https://shopee.com.br/sebo_me_livro" target="_blank">Shopee</a>.</p>
-  <p>Não quer pagar frete? <a href="https://api.whatsapp.com/send?phone=5511981350566&text=Oi! Quero retirar um pedido pessoalmente">Combine um horário</a> para retirar seu pedido pessoalmente nas catracas do metrô <a href="https://goo.gl/maps/7YvcNnk41Uoz5u6M6" target="_blank">Fradique Coutinho</a> ou arredores.</p>
-  <p>Doe seus livros sem sair de casa. <a href="https://api.whatsapp.com/send?phone=5511981350566&text=Oi! Quero agendar uma coleta de doação de livros">Agende uma coleta gratuita</a> no seu endereço em São Paulo, SP.</p>
-  <p>Acompanhe <a href="https://medium.com/@sebomelivro" target="_blank">artigos</a> e <a href="/blog">notícias</a> sobre tendências, desafios e o valor dos livros na cultura atual, sem anúncios inconvenientes.</p>
-  <p>Dúvidas? Entre em contato pelo <a href="https://api.whatsapp.com/send?phone=5511981350566">WhatsApp</a>.</p>
-  <p>Sim, esta página é só isso mesmo. Sem redes sociais ou vídeos. Assim sobra mais tempo pra gente ler um livro.</p>
-  <p>Boas leituras!</p>
-  <p>Andrews Guerreiro</p>
 </div>
 <div class="footer">
   "Um leitor vive mil vidas antes de morrer. O homem que nunca lê vive apenas uma." - George R.R. Martin
