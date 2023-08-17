@@ -1,41 +1,114 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Sebo digital de livros usados. Coleta gratuita de doações de livros em São Paulo, SP. Retire seu pedido no metrô Fradique Coutinho ou arredores.">
     <title>Sebomelivro</title>
-    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="icon" type="image/webp" href="images/logo.webp">
     <style>
+        /* Reset CSS */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Global Styles */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-        }
-        .cover {
-            text-align: center;
-            background-color: #f2f2f2;
-            padding: 50px 0;
-        }
-        .cover h1 {
+            background-color: #F8F9FA;
             color: #333;
+            line-height: 1.6;
         }
-        .cover img {
-           display: block;
-           margin: 0 auto;
-           border-radius: 50%;
-           box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+        a {
+            color: #007BFF;
+            text-decoration: none;
         }
+
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #212121;
+                color: white;
+            }
+        }
+
+        /* Center Alignment */
+        .center {
+            text-align: center;
+        }
+
+        /* Header Styles */
+        header {
+            text-align: center;
+            background-color: #007BFF;
+            padding: 20px 0;
+        }
+
+        header img {
+            display: block;
+            margin: 0 auto;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        header .title {
+            font-size: 36px;
+            font-weight: bold;
+            color: white;
+            margin-top: 10px;
+        }
+
+        header .sub {
+            font-size: 18px;
+            color: #BBDEFB;
+            margin-top: 5px;
+        }
+
+        /* Main Content Container */
         .container {
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
+            background-color: #FFFFFF;
+            border: 1px solid #ECECEC;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
+
+        /* Table of Contents */
         .toc {
             border: 1px solid #ccc;
             background-color: #f9f9f9;
             padding: 10px;
+            margin-bottom: 20px;
         }
+
+        .toc h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .toc ul {
+            list-style: none;
+            padding-left: 20px;
+        }
+
+        .toc li {
+            margin-bottom: 5px;
+        }
+
+        .toc a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        /* Chapters */
         .chapter {
             border: 1px solid #ccc;
             background-color: #fff;
@@ -43,58 +116,96 @@
             margin-top: 20px;
         }
 
+        .chapter h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .chapter p {
+            font-size: 18px;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            color: #777;
+            background-color: #f2f2f2;
+        }
     </style>
 </head>
+
 <body>
-    <div class="cover">
+    <header class="center">
         <img src="images/logo.webp" height="150px" width="150px" alt="logo">
-        <h1>Sebomelivro</h1>
-        <p>Autor: Andrews Guerreiro</p>
-    </div>
+        <div class="title">Sebomelivro</div>
+        <div class="sub">Livre-se das telas. Leia um livro.</div>
+    </header>
     <div class="container">
         <div class="toc">
             <h2>Sumário</h2>
             <ul>
+                <li><a href="#epigraph">Epígrafe</a></li>
                 <li><a href="#chapter1">Capítulo 1: Introdução</a></li>
-                <li><a href="#chapter2">Capítulo 2: Lojas</a></li>
-                <li><a href="#chapter3">Capítulo 3: Frete</a></li>
-                <li><a href="#chapter4">Capítulo 4: Doações</a></li>
-                <li><a href="#chapter5">Capítulo 5: Links</a></li>
-                <li><a href="#chapter6">Capítulo 6: Contato</a></li>
-                <li><a href="#chapter7">Capítulo 7: Conclusão</a></li>
+                <li><a href="#chapter2">Capítulo 2: Busca</a></li>
+                <li><a href="#chapter3">Capítulo 3: Lojas</a></li>
+                <li><a href="#chapter4">Capítulo 4: Frete</a></li>
+                <li><a href="#chapter5">Capítulo 5: Doações</a></li>
+                <li><a href="#chapter6">Capítulo 6: Links</a></li>
+                <li><a href="#chapter7">Capítulo 7: Contato</a></li>
+                <li><a href="#chapter8">Capítulo 8: Conclusão</a></li>
+                <li><a href="#author">Sobre o Autor</a></li>
             </ul>
+        </div>
+        <div class="chapter" id="epigraph">
+            <p>"Eu acredito que algo muito mágico pode acontecer quando você lê um bom livro." - J.K. Rowling</p>
         </div>
         <div class="chapter" id="chapter1">
             <h2>Capítulo 1: Introdução</h2>
-            <p>O Sebomelivro é um sebo digital de livros usados. Foi criado em outubro de 2017. Não possui loja física.</p>
+            <p>O Sebomelivro é um sebo digital especializado em livros usados e esgotados. Sua jornada teve início em outubro de 2017. Opera exclusivamente online, sem loja física.</p>
         </div>
         <div class="chapter" id="chapter2">
-            <h2>Capítulo 2: Lojas</h2>
-            <p>Todos os livros disponíveis estão à venda na <a href="https://estantevirtual.com.br/livreiros/sebomelivro" target="_blank">Estante Virtual</a>, <a href="https://www.mercadolivre.com.br/perfil/SEBOMELIVRO" target="_blank">Mercado Livre</a> e no <a href="https://shopee.com.br/sebo_me_livro" target="_blank">Shopee</a>.</p>        </div>
+            <h2>Capítulo 2: Busca</h2>
+            <p><a href="/busca" target="_blank">Garimpe</a> todos os livros disponíveis por título ou autor.</p>
+        </div>
         <div class="chapter" id="chapter3">
-            <h2>Capítulo 3: Frete</h2>
-            <p>Não quer pagar frete? <a href="https://api.whatsapp.com/send?phone=5511981350566&text=Oi! Quero retirar um pedido pessoalmente">Combine um horário</a> para retirar seu pedido pessoalmente nas catracas do metrô <a href="https://goo.gl/maps/7YvcNnk41Uoz5u6M6" target="_blank">Fradique Coutinho</a> ou arredores.</p>
+            <h2>Capítulo 3: Lojas</h2>
+            <p>Todos os livros disponíveis estão à venda na <a href="https://estantevirtual.com.br/livreiros/sebomelivro" target="_blank">Estante Virtual</a>, <a href="https://www.mercadolivre.com.br/perfil/SEBOMELIVRO" target="_blank">Mercado Livre</a> e no <a href="https://shopee.com.br/sebo_me_livro" target="_blank">Shopee</a>.</p>
         </div>
         <div class="chapter" id="chapter4">
-            <h2>Capítulo 4: Doações</h2>
-            <p>Doe seus livros sem sair de casa. <a href="https://api.whatsapp.com/send?phone=5511981350566&text=Oi! Quero agendar uma coleta de doação de livros">Agende uma coleta gratuita</a> no seu endereço em São Paulo, SP.</p>
+            <h2>Capítulo 4: Frete</h2>
+            <p>Não quer pagar frete? <a href="https://api.whatsapp.com/send?phone=5511981350566&text=Oi! Quero retirar um pedido pessoalmente">Combine um horário</a> para retirar seu pedido pessoalmente nas catracas do metrô <a href="https://goo.gl/maps/7YvcNnk41Uoz5u6M6" target="_blank">Fradique Coutinho</a> ou arredores.</p>
         </div>
         <div class="chapter" id="chapter5">
-            <h2>Capítulo 5: Links</h2>
-            <p><a href="/busca" target="_blank">Garimpos</a>: Garimpe livros por título ou autor no acervo do Sebomelivro</p>
+            <h2>Capítulo 5: Doações</h2>
+            <p>Doe seus livros sem sair de casa. <a href="https://api.whatsapp.com/send?phone=5511981350566&text=Oi! Quero agendar uma coleta de doação de livros">Agende uma coleta gratuita</a> no seu endereço em São Paulo, SP.</p>
+        </div>
+        <div class="chapter" id="chapter6">
+            <h2>Capítulo 6: Links</h2>
             <p><a href="https://medium.com/@sebomelivro" target="_blank">Medium.com</a>: Artigos sobre tendências, desafios e o valor dos livros na cultura atual</p>
             <p><a href="/blog" target="_blank">Sem Distrações</a>: Notícias sobre o universo dos livros e do mercado editorial<p>
             <p><a href="https://livrani.github.io/" target="_blank">Livrani</a>: Encontre os melhores preços de livros em sites selecionados</p>
             <p><a href="https://livrani.github.io/" target="_blank">Bibliany</a>: Pesquise livros digitais e audiolivros em bibliotecas públicas online</p>
         </div>
-        <div class="chapter" id="chapter6">
-            <h2>Capítulo 6: Contato</h2>
+        <div class="chapter" id="chapter7">
+            <h2>Capítulo 7: Contato</h2>
             <p>Dúvidas? Entre em contato pelo <a href="https://api.whatsapp.com/send?phone=5511981350566">WhatsApp</a>.</p>
         </div>
-        <div class="chapter" id="chapter7">
-            <h2>Capítulo 7: Conclusão</h2>
+        <div class="chapter" id="chapter8">
+            <h2>Capítulo 8: Conclusão</h2>
             <p>Sim, esta página é assim mesmo. Sem redes sociais ou vídeos. Em formato de livro. Desse jeito dá mais vontade de lermos um livro de verdade. Boas leituras!</p>
         </div>
+        <div class="chapter" id="author">
+            <h2>Sobre o Autor</h2>
+            <p>Andrews Guerreiro é o fundador do Sebomelivro. Movido por uma paixão inabalável por livros, ele aspirava proporcionar a todos os brasileiros o privilégio de desfrutar da leitura por meio de livros acessíveis.</p>
+        </div>
     </div>
+    <footer class="footer">
+        <p>&copy; 2023 Sebomelivro. Todos os direitos reservados.</p>
+    </footer>
 </body>
+
 </html>
