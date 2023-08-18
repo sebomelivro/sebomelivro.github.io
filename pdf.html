@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PDF Viewer</title>
+  <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
+</head>
+<body>
+  <div id="pdfViewer"></div>
+  <script>
+    var pdfjsLib = require('pdfjs-dist/build/pdf.js');
+    var pdfDoc = await pdfjsLib.getDocument('Sebomelivro.pdf');
+    var pdfViewer = new pdfjsLib.PDFViewerElement({
+      container: document.getElementById('pdfViewer')
+    });
+    pdfViewer.open(pdfDoc);
+  </script>
+</body>
+</html>
