@@ -13,6 +13,10 @@
             width: 100%;
             height: 100%;
             overflow: hidden;
+            background-color: white;
+            color: black;
+            font-family: sans-serif;
+            line-height: 1.6;
         }
         
         #pdf-container {
@@ -24,12 +28,23 @@
             width: 100%;
             height: 100%;
         }
+
+        a {
+            text-decoration: underline;        
+
+        p {
+            font-size: 18px;
+            padding: 10px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: justify;
+        }
     </style>
 </head>
 <body>
     <div id="pdf-container">
         <object id="pdf" data="Sebomelivro.pdf" type="application/pdf">
-            <p>Essa página é um livro digital em PDF e seu navegador não suporta esse formato. Você pode <a href="Sebomelivro.pdf">baixar o livro</a> gratuitamente ou <a href="web.html">acessar o conteúdo</a> em um formato compatível.</a></p>
+            <p>Essa página é um livro digital em PDF e seu navegador não suporta esse formato. Você pode <a href="Sebomelivro.pdf">baixar o livro</a> gratuitamente ou <a href="web.html">acessar o conteúdo</a> em um formato compatível. Qualquer dúvida, entre em contato pelo <a href="https://api.whatsapp.com/send?phone=5511981350566">WhatsApp</a>.</a></p>
         </object>
     </div>
 </body>
