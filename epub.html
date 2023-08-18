@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EPUB Viewer</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        
+        #viewer {
+            height: 100%;
+            overflow: hidden;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/epubjs@0.3.86/dist/epub.min.js"></script>
+</head>
+<body>
+    <div id="viewer"></div>
+    <script>
+        var book = ePub("Sebomelivro.epub");
+        var rendition = book.renderTo("viewer");
+        rendition.display();
+    </script>
+</body>
+</html>
