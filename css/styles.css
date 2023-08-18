@@ -56,6 +56,12 @@
     margin-top: 10px;
   }
 
+  header .sub {
+    font-size: 18px;
+    color: white;
+    margin-top: 5px;
+  }
+
   /* Main Content Container */
   .container {
     max-width: 800px;
