@@ -20,6 +20,11 @@ header {
     margin: 0;
 }
 
+.logo-image {
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
 /* Estilos da navegação */
 nav ul {
     list-style: none;
@@ -54,12 +59,13 @@ input[type="search"] {
     width: 100%;
     border-radius: 5px;
     outline: none;
+    text-decoration: none;
 }
 
 .search-buttons {
     margin-top: 10px;
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Centralizar horizontalmente */
 }
 
 button {
@@ -85,7 +91,7 @@ section {
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-bottom: 1rem;
-    text-align: justify; 
+    text-align: center; 
 }
 
 section a {
@@ -95,6 +101,7 @@ section a {
 section h2,
 section p {
     color: #000;
+    text-align: justify;
 }
 
 /* Estilos do rodapé */
