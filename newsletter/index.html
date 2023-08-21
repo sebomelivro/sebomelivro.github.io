@@ -69,7 +69,7 @@
     </div>
     <div></div>
     <div id="sib-container" class="sib-container--large sib-container--vertical" style="text-align:center; background-color:rgba(255,255,255,1); max-width:540px; border-radius:3px; border-width:1px; border-color:#C0CCD9; border-style:solid; direction:ltr">
-      <form id="sib-form" method="POST" action="https://22113c69.sibforms.com/serve/MUIFAORGrw_J1UnpM7Fdq-TbvBrMMCUIY6yrUkpZzdg6MFKmLnkiX6djBtRuFF0Tz6AtBnPBxtMaRJ_qSx0gh17OjrVFxNxWUCvbs-pRBCSTphmgvAmN2M5EQFm11YLcAchsM6wLd7w3rdsRUdjVyJkSKmajXBGXOmRLSNkKRaGcEOcqhWaib1awxxS0BKmq5gAyqLwFtlN2WlFy" data-type="subscription">
+      <form id="sib-form" method="POST" action="https://22113c69.sibforms.com/serve/MUIFAFLWnaEwfM4NuJkQ-eRo7nmegs4pJ0EvvmNw2FLViJQn6UzIpBBUXssq1FLNbjj0RbvwQLG_VZgKu1b1P5-IYlL-00EkQ_5Dgd2FwYdOetiULt5oWDO0mThMX1BdXfB6YXGA72ZnAU7kgmZGPh8vGT6q8Je4yaeo-cJcxz8o4SiyyGeIh0e6NB_2K1xMexxhzbnGJbjcTTiB" data-type="subscription">
         <div style="padding: 8px 0;">
           <div class="sib-form-block" style="font-size:32px; text-align:left; font-weight:700; font-family:&quot;Helvetica&quot;, sans-serif; color:#3C4858; background-color:transparent; text-align:left">
             <p>Newsletter Sebomelivro</p>
@@ -97,6 +97,23 @@
               </label>
               <label class="entry__specification" style="font-size:12px; text-align:left; font-family:&quot;Helvetica&quot;, sans-serif; color:#8390A4; text-align:left">
                 Informe seu endereço de e-mail para assinar. Por exemplo, abc@xyz.com.
+              </label>
+            </div>
+          </div>
+        </div>
+        <div style="padding: 8px 0;">
+          <div class="sib-captcha sib-form-block">
+            <div class="form__entry entry_block">
+              <div class="form__label-row ">
+                <script>
+                  function handleCaptchaResponse() {
+                    var event = new Event('captchaChange');
+                    document.getElementById('sib-captcha').dispatchEvent(event);
+                  }
+                </script>
+                <div class="g-recaptcha sib-visible-recaptcha" id="sib-captcha" data-sitekey="6Lc08MInAAAAAMim01jG-ww15-Qd100EsIk6aJDG" data-callback="handleCaptchaResponse" style="direction:ltr"></div>
+              </div>
+              <label class="entry__error entry__error--primary" style="font-size:16px; text-align:left; font-family:&quot;Helvetica&quot;, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;">
               </label>
             </div>
           </div>
@@ -148,23 +165,6 @@
               </svg>
               ASSINAR
             </button>
-          </div>
-        </div>
-        <div style="padding: 8px 0;">
-          <div class="sib-captcha sib-form-block">
-            <div class="form__entry entry_block">
-              <div class="form__label-row ">
-                <script>
-                  function handleCaptchaResponse() {
-                    var event = new Event('captchaChange');
-                    document.getElementById('sib-captcha').dispatchEvent(event);
-                  }
-                </script>
-                <div class="g-recaptcha sib-visible-recaptcha" id="sib-captcha" data-sitekey="6Lc08MInAAAAAMim01jG-ww15-Qd100EsIk6aJDG" data-callback="handleCaptchaResponse" style="direction:ltr"></div>
-              </div>
-              <label class="entry__error entry__error--primary" style="font-size:16px; text-align:left; font-family:&quot;Helvetica&quot;, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;">
-              </label>
-            </div>
           </div>
         </div>
 
