@@ -16,7 +16,7 @@
 <body>
   <div>
     <h2><a href="https://github.com/andguerreiro/sebomelivro">Sebomelivro</a></h2>
-    <form target="_blank" action="https://www.estantevirtual.com.br/sebos-e-livreiros/sebomelivro">
+    <form id="searchForm" target="_blank" action="https://www.estantevirtual.com.br/sebos-e-livreiros/sebomelivro">
       <input type="hidden" name="nsCat" value="Natural">
       <input type="hidden" name="sellers" value="1002074">
       <input type="search" placeholder="Digite um título ou autor..." name="q" autofocus id="searchInput">
@@ -48,6 +48,7 @@
           if (result) {
             document.getElementById('searchInput').value = result.text;
             stopScanning();
+            document.getElementById('searchForm').submit(); // Submeter o formulário automaticamente
           } else if (err && !(err instanceof ZXing.NotFoundException)) {
             console.error(err);
             alert('Erro ao tentar escanear o ISBN. Verifique se a câmera está acessível e se você concedeu as permissões necessárias.');
@@ -68,4 +69,3 @@
   </script>
 </body>
 </html>
-
