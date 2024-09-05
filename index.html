@@ -65,13 +65,21 @@
         }
 
         // Configurar a leitura do código de barras
-        const result = await codeReader.decodeFromVideoDevice(selectedDeviceId, videoElement);
+        const result = await codeReader.decodeFromVideoDevice(selectedDeviceId, videoElement, (result, err) => {
+          if (result) {
+            // Preencher o campo de busca com o resultado
+            document.getElementById('searchInput').value = result.text;
 
-        // Preencher o campo de busca com o resultado
-        document.getElementById('searchInput').value = result.text;
+            // Parar a câmera e esconder o vídeo
+            stopScanning();
+          }
+          if (err && !(err instanceof ZXing.NotFoundException)) {
+            console.error(err);
+            alert('Erro ao tentar escanear o ISBN. Verifique se a câmera está acessível e se você concedeu as permissões necessárias.');
+            stopScanning();
+          }
+        });
 
-        // Parar a câmera e esconder o vídeo
-        stopScanning();
       } catch (err) {
         console.error(err);
         alert('Erro ao tentar escanear o ISBN. Verifique se a câmera está acessível e se você concedeu as permissões necessárias.');
