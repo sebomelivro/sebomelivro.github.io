@@ -49,8 +49,8 @@
           return;
         }
 
-        // Selecionar a câmera traseira
-        let selectedDeviceId;
+        // Tentar encontrar a câmera traseira
+        let selectedDeviceId = null;
         for (const device of devices) {
           if (device.label.toLowerCase().includes('back') || device.label.toLowerCase().includes('rear')) {
             selectedDeviceId = device.deviceId;
@@ -61,6 +61,7 @@
         // Se não encontrou a câmera traseira, use a primeira disponível
         if (!selectedDeviceId) {
           selectedDeviceId = devices[0].deviceId;
+          console.warn('Câmera traseira não encontrada, usando a primeira câmera disponível.');
         }
 
         // Configurar a leitura do código de barras
@@ -73,7 +74,7 @@
         stopScanning();
       } catch (err) {
         console.error(err);
-        alert('Erro ao tentar escanear o ISBN.');
+        alert('Erro ao tentar escanear o ISBN. Verifique se a câmera está acessível e se você concedeu as permissões necessárias.');
         stopScanning();
       }
     }
