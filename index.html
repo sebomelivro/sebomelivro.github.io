@@ -4,11 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sebomelivro</title>
-  <!-- Incluindo a biblioteca ZXing para leitura de códigos de barras -->
   <script src="https://unpkg.com/@zxing/library@latest"></script>
   <style>
     #video {
-      display: none; /* Ocultar o vídeo da câmera até que seja necessário */
+      display: none;
       width: 100%;
       height: auto;
     }
@@ -21,65 +20,45 @@
       <input type="hidden" name="nsCat" value="Natural">
       <input type="hidden" name="sellers" value="1002074">
       <input type="search" placeholder="Digite um título ou autor..." name="q" autofocus id="searchInput">
-      <button type="submit">Garimpar</button>
-      <button type="reset">Limpar</button>
-      <button type="button" onclick="startScanning()">Escanear ISBN</button>
+      <p>
+        <button type="submit">Pesquisar</button>
+        <button type="button" onclick="startScanning()">Escanear ISBN</button>
+        <button type="reset">Limpar</button>
+      </p>
     </form>
     <p>
       <a href="https://estantevirtual.com.br/sebos-e-livreiros/sebomelivro">Estante Virtual</a> |
       <a href="https://lista.mercadolivre.com.br/_CustId_1175694276">Mercado Livre</a> |
       <a href="https://bsky.app/profile/sebomelivro.bsky.social">Bluesky</a>
     </p>
-    <!-- Elemento de vídeo para captura da câmera -->
     <video id="video" autoplay></video>
   </div>
 
   <script>
-    async function startScanning() {
-      const codeReader = new ZXing.BrowserBarcodeReader();
-      const videoElement = document.getElementById('video');
+    const codeReader = new ZXing.BrowserBarcodeReader();
+    const videoElement = document.getElementById('video');
 
-      // Exibir o vídeo
+    async function startScanning() {
       videoElement.style.display = 'block';
 
       try {
         const devices = await codeReader.listVideoInputDevices();
-        if (devices.length === 0) {
-          alert('Nenhuma câmera detectada.');
-          return;
-        }
+        if (!devices.length) return alert('Nenhuma câmera detectada.');
 
-        // Tentar encontrar a câmera traseira
-        let selectedDeviceId = null;
-        for (const device of devices) {
-          if (device.label.toLowerCase().includes('back') || device.label.toLowerCase().includes('rear')) {
-            selectedDeviceId = device.deviceId;
-            break;
-          }
-        }
+        const selectedDeviceId = devices.find(device => 
+          device.label.toLowerCase().includes('back') || device.label.toLowerCase().includes('rear')
+        )?.deviceId || devices[0].deviceId;
 
-        // Se não encontrou a câmera traseira, use a primeira disponível
-        if (!selectedDeviceId) {
-          selectedDeviceId = devices[0].deviceId;
-          console.warn('Câmera traseira não encontrada, usando a primeira câmera disponível.');
-        }
-
-        // Configurar a leitura do código de barras
-        const result = await codeReader.decodeFromVideoDevice(selectedDeviceId, videoElement, (result, err) => {
+        codeReader.decodeFromVideoDevice(selectedDeviceId, videoElement, (result, err) => {
           if (result) {
-            // Preencher o campo de busca com o resultado
             document.getElementById('searchInput').value = result.text;
-
-            // Parar a câmera e esconder o vídeo
             stopScanning();
-          }
-          if (err && !(err instanceof ZXing.NotFoundException)) {
+          } else if (err && !(err instanceof ZXing.NotFoundException)) {
             console.error(err);
             alert('Erro ao tentar escanear o ISBN. Verifique se a câmera está acessível e se você concedeu as permissões necessárias.');
             stopScanning();
           }
         });
-
       } catch (err) {
         console.error(err);
         alert('Erro ao tentar escanear o ISBN. Verifique se a câmera está acessível e se você concedeu as permissões necessárias.');
@@ -88,12 +67,10 @@
     }
 
     function stopScanning() {
-      const videoElement = document.getElementById('video');
       videoElement.style.display = 'none';
-
-      const codeReader = new ZXing.BrowserBarcodeReader();
       codeReader.reset();
     }
   </script>
 </body>
 </html>
+
