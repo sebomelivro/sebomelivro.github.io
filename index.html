@@ -4,11 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sebomelivro</title>
-
+  <!-- Incluindo a biblioteca ZXing para leitura de códigos de barras -->
   <script src="https://unpkg.com/@zxing/library@latest"></script>
   <style>
     #video {
-      display: none;
+      display: none; /* Ocultar o vídeo da câmera até que seja necessário */
+      width: 100%;
+      height: auto;
     }
   </style>
 </head>
@@ -19,42 +21,56 @@
       <input type="hidden" name="nsCat" value="Natural">
       <input type="hidden" name="sellers" value="1002074">
       <input type="search" placeholder="Digite um título ou autor..." name="q" autofocus id="searchInput">
-      <button type="submit">Pesquisar</button>
-      <button type="button" onclick="startScanning()">Escanear ISBN</button>
+      <button type="submit">Garimpar</button>
       <button type="reset">Limpar</button>
+      <button type="button" onclick="startScanning()">Escanear ISBN</button>
     </form>
     <p>
       <a href="https://estantevirtual.com.br/sebos-e-livreiros/sebomelivro">Estante Virtual</a> |
       <a href="https://lista.mercadolivre.com.br/_CustId_1175694276">Mercado Livre</a> |
       <a href="https://bsky.app/profile/sebomelivro.bsky.social">Bluesky</a>
     </p>
-    <video id="video" width="300" height="200" autoplay></video>
+    <!-- Elemento de vídeo para captura da câmera -->
+    <video id="video" autoplay></video>
   </div>
 
   <script>
-    let selectedDeviceId;
-
-    function startScanning() {
+    async function startScanning() {
       const codeReader = new ZXing.BrowserBarcodeReader();
-      codeReader.listVideoInputDevices()
-        .then((videoInputDevices) => {
-          if (videoInputDevices.length > 0) {
-            selectedDeviceId = videoInputDevices[0].deviceId;
-            codeReader.decodeFromVideoDevice(selectedDeviceId, 'video')
-              .then((result) => {
-                document.getElementById('searchInput').value = result.text;
-                stopScanning();
-              })
-              .catch((err) => console.error(err));
-          } else {
-            alert('Nenhuma câmera detectada.');
-          }
-        })
-        .catch((err) => console.error(err));
+      const videoElement = document.getElementById('video');
+
+      // Exibir o vídeo
+      videoElement.style.display = 'block';
+
+      try {
+        const devices = await codeReader.listVideoInputDevices();
+        if (devices.length === 0) {
+          alert('Nenhuma câmera detectada.');
+          return;
+        }
+
+        // Use a primeira câmera disponível
+        const selectedDeviceId = devices[0].deviceId;
+
+        // Configurar a leitura do código de barras
+        const result = await codeReader.decodeFromVideoDevice(selectedDeviceId, videoElement);
+
+        // Preencher o campo de busca com o resultado
+        document.getElementById('searchInput').value = result.text;
+
+        // Parar a câmera e esconder o vídeo
+        stopScanning();
+      } catch (err) {
+        console.error(err);
+        alert('Erro ao tentar escanear o ISBN.');
+        stopScanning();
+      }
     }
 
     function stopScanning() {
-      document.getElementById('video').style.display = 'none';
+      const videoElement = document.getElementById('video');
+      videoElement.style.display = 'none';
+
       const codeReader = new ZXing.BrowserBarcodeReader();
       codeReader.reset();
     }
