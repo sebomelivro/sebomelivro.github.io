@@ -49,8 +49,19 @@
           return;
         }
 
-        // Use a primeira câmera disponível
-        const selectedDeviceId = devices[0].deviceId;
+        // Selecionar a câmera traseira
+        let selectedDeviceId;
+        for (const device of devices) {
+          if (device.label.toLowerCase().includes('back') || device.label.toLowerCase().includes('rear')) {
+            selectedDeviceId = device.deviceId;
+            break;
+          }
+        }
+
+        // Se não encontrou a câmera traseira, use a primeira disponível
+        if (!selectedDeviceId) {
+          selectedDeviceId = devices[0].deviceId;
+        }
 
         // Configurar a leitura do código de barras
         const result = await codeReader.decodeFromVideoDevice(selectedDeviceId, videoElement);
