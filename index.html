@@ -16,11 +16,8 @@
 </head>
 <body>
   <div>
-    <h2>
-      <a href="https://github.com/andguerreiro/sebomelivro">Sebomelivro</a>
-    </h2>
-    <form id="searchForm" onsubmit="redirectToSearch(); return false;">
-      <input type="search" name="search" autofocus id="searchInput" required>
+    <h2><a href="https://github.com/andguerreiro/sebomelivro">Sebomelivro</a></h2>
+    <form id="searchForm" target="_blank" action="https://sebomelivro.mercadoshops.com.br/" onsubmit="return handleSubmit(event)">
       <p>
         <button type="submit">Pesquisar</button>
         <button type="button" onclick="startScanning()">Escanear ISBN</button>
@@ -31,14 +28,20 @@
   </div>
 
   <script>
-    function redirectToSearch() {
-      const searchInput = document.getElementById('searchInput').value;
-      const baseUrl = 'https://sebomelivro.mercadoshops.com.br/';
-      window.open(baseUrl + encodeURIComponent(searchInput), '_blank');
-    }
-  </script>
+function handleSubmit(event) {
+    event.preventDefault(); // Impede o envio padrão do formulário
+    const searchInput = document.getElementById('searchInput').value;
 
-  <script>
+    // Verifica se o input é "XXX" ou qualquer outra palavra aleatória
+    if (searchInput.trim() !== "") {
+        // Redireciona para a URL desejada
+        window.open(`https://sebomelivro.mercadoshops.com.br/${encodeURIComponent(searchInput)}`, '_blank');
+    } else {
+        // Se o input estiver vazio, envia o formulário normalmente
+        document.getElementById('searchForm').submit();
+    }
+}
+    
     const codeReader = new ZXing.BrowserBarcodeReader();
     const videoElement = document.getElementById('video');
 
