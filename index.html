@@ -18,7 +18,7 @@
   <div>
     <h2><a href="https://github.com/andguerreiro/sebomelivro">Sebomelivro</a></h2>
     <form id="searchForm" target="_blank" action="https://sebomelivro.mercadoshops.com.br/" onsubmit="return handleSubmit(event)">
-      <input type="search" name="q" id="searchInput" autofocus required>
+      <input type="search" name="q" id="searchInput" placeholder="Digite ou escaneie o ISBN..." autofocus required>
       <p>
         <button type="submit">Pesquisar</button>
         <button type="button" onclick="startScanning()">Escanear ISBN</button>
@@ -59,9 +59,11 @@
 
         codeReader.decodeFromVideoDevice(selectedDeviceId, videoElement, (result, err) => {
           if (result) {
-            document.getElementById('searchInput').value = result.text;
+            const isbn = result.text;
+            document.getElementById('searchInput').value = isbn; // Preenche o campo de entrada
             stopScanning();
-            document.getElementById('searchForm').submit(); // Submeter o formulário automaticamente
+            // Redireciona para a URL desejada sem o parâmetro ?q=
+            window.open(`https://sebomelivro.mercadoshops.com.br/${encodeURIComponent(isbn)}`, '_blank');
           } else if (err && !(err instanceof ZXing.NotFoundException)) {
             console.error(err);
             alert('Erro ao tentar escanear o ISBN. Verifique se a câmera está acessível e se você concedeu as permissões necessárias.');
