@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="logo.png" type="image/png">
-  <title>ISBN</title>
+  <title>Sebomelivro</title>
   <script src="https://unpkg.com/@zxing/library@latest"></script>
   <style>
     #video {
@@ -16,7 +16,9 @@
 </head>
 <body>
   <div>
-    <h2><a href="https://github.com/andguerreiro/sebomelivro">Sebomelivro</a></h2>
+    <h2>
+      <a href="https://github.com/andguerreiro/sebomelivro">Sebomelivro</a>
+    </h2>
     <form id="searchForm" onsubmit="redirectToSearch(); return false;">
       <input type="search" name="search" autofocus id="searchInput" required>
       <p>
@@ -29,16 +31,18 @@
   </div>
 
   <script>
-    const codeReader = new ZXing.BrowserBarcodeReader();
-    const videoElement = document.getElementById('video');
-
     function redirectToSearch() {
       const searchInput = document.getElementById('searchInput').value;
       const baseUrl = 'https://sebomelivro.mercadoshops.com.br/';
       window.open(baseUrl + encodeURIComponent(searchInput), '_blank');
-    }    
-    
-      async function startScanning() {
+    }
+  </script>
+
+  <script>
+    const codeReader = new ZXing.BrowserBarcodeReader();
+    const videoElement = document.getElementById('video');
+
+    async function startScanning() {
       videoElement.style.display = 'block';
 
       try {
