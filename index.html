@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="logo.png" type="image/png">
-  <title>Sebomelivro</title>
+  <title>ISBN</title>
   <script src="https://unpkg.com/@zxing/library@latest"></script>
   <style>
     #video {
@@ -36,9 +36,9 @@
       const searchInput = document.getElementById('searchInput').value;
       const baseUrl = 'https://sebomelivro.mercadoshops.com.br/';
       window.open(baseUrl + encodeURIComponent(searchInput), '_blank');
-    }
-
-    async function startScanning() {
+    }    
+    
+      async function startScanning() {
       videoElement.style.display = 'block';
 
       try {
@@ -55,23 +55,21 @@
             stopScanning();
             document.getElementById('searchForm').submit(); // Submeter o formulário automaticamente
           } else if (err && !(err instanceof ZXing.NotFoundException)) {
-            handleScanningError(err);
+            console.error(err);
+            alert('Erro ao tentar escanear o ISBN. Verifique se a câmera está acessível e se você concedeu as permissões necessárias.');
+            stopScanning();
           }
         });
       } catch (err) {
-        handleScanningError(err);
+        console.error(err);
+        alert('Erro ao tentar escanear o ISBN. Verifique se a câmera está acessível e se você concedeu as permissões necessárias.');
+        stopScanning();
       }
     }
 
     function stopScanning() {
       videoElement.style.display = 'none';
       codeReader.reset();
-    }
-
-    function handleScanningError(err) {
-      console.error(err);
-      alert('Erro ao tentar escanear o ISBN. Verifique se a câmera está acessível e se você concedeu as permissões necessárias.');
-      stopScanning();
     }
   </script>
 </body>
